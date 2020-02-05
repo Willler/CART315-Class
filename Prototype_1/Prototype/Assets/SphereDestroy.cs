@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyTarget : MonoBehaviour
+public class SphereDestroy : MonoBehaviour
 {
-
-    public int score;
+    // Start is called before the first frame update
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-    
+        
     }
 
     void OnCollisionEnter(Collision other)
     {
-        KeepingScore.Score += 5;
+        KeepingScore.Score += 8;
         Debug.Log(KeepingScore.Score);
         Destroy(gameObject);
     }
