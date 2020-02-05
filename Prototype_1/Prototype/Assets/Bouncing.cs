@@ -18,6 +18,7 @@ public class Bouncing : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other)
+
     {
 
         Destroy(PlayerCtrl);
