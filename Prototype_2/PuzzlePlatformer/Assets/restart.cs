@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class restart : MonoBehaviour
 {
+
+    public AudioClip die;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = die;
     }
 
     // Update is called once per frame
@@ -17,8 +21,9 @@ public class restart : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter()
     {
         SceneManager.LoadScene("SampleScene");
+        GetComponent<AudioSource>().Play();
     }
 }
